@@ -1,12 +1,14 @@
-;;; -*- mode: emacs-lisp; lexical-binding: t -*-
+;;; -*- mode: emacs-lisp; lexical-binding: t; -*-
 
-;; Eldev configuration for vui.el
+;; Eldev configuration for etaf-html.el
 ;; See https://github.com/doublep/eldev
 
-;; Use GNU ELPA and MELPA for dependencies
 (eldev-use-package-archive 'gnu-elpa)
 (eldev-use-package-archive 'melpa)
 
-(eldev-use-vc-repository 'vui :github "d12frosted/vui.el")
-(eldev-use-vc-repository 'ekp :github "Kinneyzhang/emacs-kp")
-(eldev-use-vc-repository 'vui+ :github "ginqi7/vui-plus.el")
+;; `etaf', its `ebox' and `ecss' dependencies and `ekp' are published
+;; on the ETAF archive.
+(eldev-use-package-archive (cons "etaf" "https://etaf.top/packages/"))
+
+;; Run the Buttercup test suite.
+(eldev-add-extra-dependencies 'test 'buttercup)
